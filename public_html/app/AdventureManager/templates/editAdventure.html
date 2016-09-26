@@ -1,10 +1,19 @@
 <div>
-    Adventure Name: <input type="text" />
-    Adventure Description: <input type="text" />
+    Adventure Name: <input type="text" ng-model="$ctrl.adventure.name" /> <br/>
+    Adventure Description: <input type="text" ng-model="$ctrl.adventure.description" /> <br/>
     Ruleset:
+    <select class="fullWidth" ng-options="option.Name for option in $ctrl.ruleset"
+            ng-model="$ctrl.adventure.ruleSet">
+        <option value='' disabled>- Please Choose a Race -</option>
+    </select>
 </div>
 <div>
     <a href="">Add story</a>
     Adventure Stories:
-    
+
 </div>
+
+<hr/>
+Name: {{$ctrl.adventure.name}} <br/>
+Description: {{$ctrl.adventure.description}}<br/>
+Ruleset: {{$ctrl.adventure.ruleSet}}
