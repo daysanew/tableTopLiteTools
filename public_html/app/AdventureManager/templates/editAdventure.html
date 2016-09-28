@@ -2,18 +2,20 @@
     Adventure Name: <input type="text" ng-model="$ctrl.adventure.name" /> <br/>
     Adventure Description: <input type="text" ng-model="$ctrl.adventure.description" /> <br/>
     Ruleset:
-    <select class="fullWidth" ng-options="option.Name for option in $ctrl.ruleset"
+    <select class="fullWidth" ng-options="option.name for option in $ctrl.ruleSets"
             ng-model="$ctrl.adventure.ruleSet">
-        <option value='' disabled>- Please Choose a Race -</option>
+        <option value='' disabled>- Please Choose a Ruleset -</option>
     </select>
+    <input type="button" value="Save Adventure Data" ng-click="$ctrl.upsertAdventure()" />
 </div>
-<div>
+<div ng-hide="!$ctrl.adventure.adventureId">
     <a href="">Add story</a>
     Adventure Stories:
 
 </div>
 
 <hr/>
+Id: {{$ctrl.adventure.adventureId}}<br/>
 Name: {{$ctrl.adventure.name}} <br/>
 Description: {{$ctrl.adventure.description}}<br/>
 Ruleset: {{$ctrl.adventure.ruleSet}}

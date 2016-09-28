@@ -3,7 +3,7 @@ angular.module('tableTopTools').config(function ($routeProvider) {
             .when("/", {
                 templateUrl: "main.html"
             })
-            .when("/editAdventure", {
+            .when("/editAdventure/:adventureId?", {
                 templateUrl: "editAdventure.html"
             })
             .when("/story", {
