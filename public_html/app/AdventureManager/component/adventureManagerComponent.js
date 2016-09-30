@@ -11,8 +11,7 @@ angular.module('tableTopTools').component('adventureManager', {
                 var adventureResult = Adventure.update(self.adventure);
                 adventureResult.$promise.then(function(result){
                    self.adventure.adventureId = result.id; 
-                });
-                
+                });               
             };
         }
     ]
