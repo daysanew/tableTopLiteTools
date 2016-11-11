@@ -9,12 +9,14 @@
     <input type="button" value="Save Adventure Data" ng-click="$ctrl.upsertAdventure()" />
 </div>
 <div ng-hide="!$ctrl.adventure.adventureId">
-    <a href="" ng-click>Add story</a>
-    <div>
-        
+    <a href="" ng-click='$ctrl.addStory = true'>Add story</a>
+    <div ng-hide='!$ctrl.addStory'>
+        <story-manager></story-manager>
     </div>
     Adventure Stories:
-
+    <div ng-repeat="item in $ctrl.adventure.adventureStories">
+        item.storyName | <a href='Edit story'></a>
+    </div>
 </div>
 
 <hr/>
